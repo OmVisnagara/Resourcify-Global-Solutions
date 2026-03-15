@@ -105,209 +105,230 @@
   object-fit: cover;
 }
 
-.about-stats {
-  display: flex;
-  gap: var(--space-4);
-  padding-top: var(--space-4);
-}
-
-.about-stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.about-stat-value {
-  font-family: var(--font-headline);
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
-  color: var(--color-secondary);
-}
-
-.about-stat-label {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.about-stat-divider {
-  width: 1px;
-  height: 3rem;
-  background: var(--color-outline-variant);
-  align-self: center;
-}
-
-/* Challenges Section */
-.challenges-grid {
+/* Service Sections */
+.about-service-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
-  align-items: start;
+  gap: var(--space-16);
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
-  .challenges-grid {
-    grid-template-columns: 5fr 7fr;
+  .about-service-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.challenges-left {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-}
-
-.obstacles-card {
-  padding: var(--space-8);
-  background: var(--color-surface-bright);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(226, 232, 240, 0.3);
-}
-
-.obstacles-title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--color-primary);
-  margin-bottom: var(--space-6);
+.about-service-label-wrapper {
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  margin-bottom: var(--space-4);
 }
 
-.obstacle-item {
+/* Expertise List */
+.about-expertise-title {
+  font-family: var(--font-headline);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.about-expertise-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-expertise-item {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
-  margin-bottom: var(--space-4);
+  color: var(--color-on-surface-variant);
+  font-weight: var(--font-medium);
 }
 
-.obstacle-dot-wrapper {
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: var(--radius-full);
-  background: rgba(186, 26, 26, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.25rem;
+.about-expertise-item .material-symbols-outlined {
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+  margin-top: 0.15rem;
   flex-shrink: 0;
 }
 
-.obstacle-dot {
-  width: 0.375rem;
-  height: 0.375rem;
-  border-radius: var(--radius-full);
-  background: var(--color-error);
-}
-
-.approach-card {
-  padding: var(--space-8);
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-primary);
-}
-
-.approach-item {
+/* Service Visual Cards */
+.about-service-visual {
   display: flex;
-  align-items: center;
-  gap: var(--space-4);
+  justify-content: center;
+}
+
+.about-service-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.about-service-feature-card {
+  background: var(--color-surface-bright);
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-outline-variant);
+  transition: all var(--transition-base);
+}
+
+.about-service-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.about-service-feature-card .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--color-secondary);
   margin-bottom: var(--space-4);
+  display: block;
 }
 
-.approach-icon {
-  background: rgba(20, 184, 166, 0.2);
-  padding: var(--space-2);
-  border-radius: var(--radius-lg);
-  transition: background var(--transition-base);
+.about-service-feature-card h4 {
+  font-family: var(--font-headline);
+  font-weight: var(--font-bold);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
 }
 
-.approach-item:hover .approach-icon {
-  background: rgba(20, 184, 166, 0.4);
+.about-service-feature-card p {
+  font-size: var(--text-sm);
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
 }
 
-.approach-icon .material-symbols-outlined {
+.about-service-feature-card-accent {
+  background: var(--color-primary);
+  border-color: transparent;
+}
+
+.about-service-feature-card-accent h4 {
+  color: var(--color-on-primary);
+}
+
+.about-service-feature-card-accent p {
+  color: rgba(243, 232, 255, 0.8);
+}
+
+.about-service-feature-card-accent .material-symbols-outlined {
   color: var(--color-secondary);
 }
 
-.challenges-image-wrapper {
-  position: relative;
-}
-
+/* Reverse grid on desktop - moves text to left */
 @media (min-width: 1024px) {
-  .challenges-image-wrapper {
-    position: sticky;
-    top: 8rem;
+  .about-service-grid-reverse {
+    direction: rtl;
+  }
+  .about-service-grid-reverse > * {
+    direction: ltr;
   }
 }
 
-.challenges-image {
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-2xl);
-  object-fit: cover;
-  width: 100%;
-  aspect-ratio: 16/10;
+/* Healthcare Billing Features */
+.billing-features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
 }
 
-/* Principles Section */
-.principles-section {
-  position: relative;
-}
-
-.principles-glow {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 33%;
-  height: 33%;
-  background: rgba(20, 184, 166, 0.05);
+.billing-feature-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-primary-container);
+  padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-full);
-  filter: blur(120px);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-on-primary);
+  transition: all var(--transition-base);
 }
 
-.principles-grid {
+.billing-feature-chip:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.billing-feature-chip .material-symbols-outlined {
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+}
+
+/* Industries Grid */
+.industries-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
 }
 
 @media (min-width: 768px) {
-  .principles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .principles-grid {
+  .industries-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.principle-card {
-  padding: var(--space-8);
-  background: var(--color-surface-container-low);
-  border-radius: var(--radius-xl);
-  border: 1px solid transparent;
+@media (min-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.industry-card {
+  background: var(--color-surface-bright);
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-outline-variant);
+  text-align: center;
+  transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
-  transition: all 300ms ease;
 }
 
-.principle-card:hover {
-  background: var(--color-surface-bright);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(226, 232, 240, 0.5);
-}
-
-.principle-watermark {
+.industry-card::after {
+  content: '';
   position: absolute;
-  right: -0.5rem;
-  bottom: -0.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.industry-card:hover::after {
+  opacity: 1;
+}
+
+.industry-card .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.industry-card h4 {
   font-family: var(--font-headline);
-  font-size: 5rem;
+  font-size: var(--text-sm);
   font-weight: var(--font-bold);
-  color: rgba(33, 0, 71, 0.05);
-  user-select: none;
+  color: var(--color-primary);
+  line-height: 1.3;
 }
 
 /* CTA Section */
