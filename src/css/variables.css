@@ -1,0 +1,123 @@
+/* ===========================
+   Resourcify Global Solutions
+   Design Tokens & Variables
+   =========================== */
+
+:root {
+  /* Primary Palette */
+  --color-primary: #210047;
+  --color-primary-container: #3d1b63;
+  --color-primary-light: #54397b;
+  --color-primary-fixed: #eddcff;
+  --color-primary-fixed-dim: #d8baff;
+
+  /* Secondary / Accent (Teal) */
+  --color-secondary: #14b8a6;
+  --color-secondary-container: #ccfbf1;
+  --color-secondary-dark: #0d9488;
+
+  /* Surface / Background */
+  --color-surface: #f7f5f8;
+  --color-surface-bright: #ffffff;
+  --color-surface-container: #f3ecf2;
+  --color-surface-container-high: #ede6ed;
+  --color-surface-container-highest: #e7e0e7;
+  --color-surface-container-low: #fcf8ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #ded8df;
+
+  /* Text Colors */
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #475569;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #f3e8ff;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #115e59;
+
+  /* Tertiary */
+  --color-tertiary: #0f172a;
+  --color-tertiary-container: #334155;
+
+  /* Outline */
+  --color-outline: #cbd5e1;
+  --color-outline-variant: #e2e8f0;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+
+  /* Inverse */
+  --color-inverse-surface: #1e293b;
+  --color-inverse-on-surface: #f8fafc;
+
+  /* Typography */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Spacing Scale */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 1.875rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-primary: 0 10px 30px -5px rgba(33, 0, 71, 0.2);
+  --shadow-secondary: 0 10px 30px -5px rgba(20, 184, 166, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Max Width */
+  --max-w-7xl: 80rem;
+
+  /* Z-Index Scale */
+  --z-nav: 50;
+  --z-modal: 100;
+  --z-toast: 150;
+}
