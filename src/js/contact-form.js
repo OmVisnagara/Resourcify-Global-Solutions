@@ -1,17 +1,8 @@
 /**
  * contact-form.js — Contact Form Handler
- * Sends data to Google Apps Script → Google Sheets + Email
- * 
- * SETUP INSTRUCTIONS:
- * 1. Create a Google Sheet
- * 2. Go to Extensions → Apps Script
- * 3. Paste the doPost function (see implementation_plan.md)
- * 4. Deploy as Web App with "Anyone" access
- * 5. Copy the deployment URL below
+ * Sends data to Vercel serverless API (/api/contact)
+ * The real backend URL is hidden server-side as an environment variable.
  */
-
-// TODO: Replace with your actual Google Apps Script deployment URL
-const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
@@ -81,22 +72,25 @@ async function handleFormSubmit(e) {
   submitBtn.disabled = true;
 
   try {
-    if (APPS_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
-      // Demo mode — simulate success
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      window.showToast('Thank you! Your request has been submitted successfully.', 'success');
-      form.reset();
-    } else {
-      // Real submission
-      const response = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
+    const result = await response.json();
+
+    if (response.ok) {
       window.showToast('Thank you! Your request has been submitted successfully.', 'success');
       form.reset();
+      // Reset phone code display
+      const phoneCode = document.getElementById('phone-code');
+      if (phoneCode) {
+        phoneCode.textContent = '';
+        phoneCode.classList.remove('visible');
+      }
+    } else {
+      window.showToast(result.error || 'Something went wrong. Please try again.', 'error');
     }
   } catch (error) {
     console.error('Form submission error:', error);
